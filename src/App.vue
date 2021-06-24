@@ -1,16 +1,11 @@
 <template>
-  <HelloWorld />
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
@@ -19,7 +14,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 </style>

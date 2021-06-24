@@ -21,12 +21,12 @@
 
 ```html
 <p id="red">红色的字</p>
-```
 
-```css
+<style>
 #red {
     color: red;
 }
+</style>
 ```
 
 ---
@@ -64,7 +64,7 @@
 <p name="onetwo">name为onetwo的一段文字</p>
 <p name="one-two">name为one-two一段文字</p>
 <p name="onetwothree">name为onetwothree的一段文字</p>
-<p name="one two">class包含one,two的一段文字</p>
+<p name="one two">name包含one,two的一段文字</p>
 
 <style>
     [name="one-two"] {  /* name属性值等于one-two */
@@ -117,7 +117,7 @@
 
 --
 
-```html
+```html [|2,12-14|3,15-17|4,18-20|5,21-23|9,24-26]
 <ul>
     <li>第一个是橘色</li>
     <li>第二个是绿色</li>
@@ -169,6 +169,44 @@
 
 --
 
+```html
+<p class="selection">一段可以高亮选中文本的段落啊啦啦啦啦</p>
+<p>普通段落</p>
+<style>
+    .selection::selection {  /* 匹配元素文本被鼠标选中的部分 */
+        background: rgb(255, 222, 211);
+    }
+</style>
+```
+
+--
+
+```html
+<p>这可能不是你每天都会使用的功能，但是确实有一些有趣的用例。例如，
+    假设你正在为一个文件系统应用程序创建一个用户界面，
+    并且希望动态添加路径，你可以这样做：</p>
+<style>
+    p::first-letter {  /* 匹配文本内容第一个字 */
+        font-size: 30px;
+    }
+</style>
+```
+
+--
+
+```html
+<button class="btn-confirm">提交</button>
+<button class="btn-cancel">取消</button>
+<style>
+    .btn-confirm::before {  /* 在匹配元素下添加一个伪元素作为第一个子元素 */
+        content: '*';
+    }
+    .btn-cancel::after {  /* 在匹配元素下添加一个伪元素作为最后一子元素 */
+        content: '&';
+        background: #ff9347;
+    }
+</style>
+```
 
 ---
 
@@ -190,7 +228,7 @@
 ```html [|5]
 <div class="main">
     <div class="sub">
-        <p>这是后台元素p</p>
+        <p>这是后代元素p</p>
     </div>
     <p>这是子元素p</p>
 </div>
@@ -208,7 +246,7 @@
 ```html [|3,5]
 <div class="main">
     <div class="sub">
-        <p>这是后台元素p</p>
+        <p>这是后代元素p</p>
     </div>
     <p>这是子元素p</p>
 </div>
@@ -281,3 +319,9 @@
  + 类选择器/伪类选择器 - 10  <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
  + 标签选择器/伪元素选择器 - 1  <!-- .element: class="fragment fade-up" data-fragment-index="3" -->
  + 通配符/关系选择器 - 0  <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
+
+---
+
+## 下一节
+
+[盒模型](/box)

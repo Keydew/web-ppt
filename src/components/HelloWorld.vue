@@ -3,9 +3,7 @@
     <div class="reveal">
       <div class="slides">
         <section
-          v-for="(item, index) in loadList"
-          :key="index"
-          :data-markdown="item"
+          :data-markdown="`/static/markdown/${markdown}.md`"
           data-separator-vertical="^\r?\n--\r?\n$"
         ></section>
       </div>
@@ -19,16 +17,26 @@ import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
 import Highlight from "reveal.js/plugin/highlight/highlight.esm.js";
 export default {
   name: "HelloWorld",
-  props: {},
+  props: {
+    markdown: {
+      type: String,
+      default: "main",
+    },
+  },
   data() {
     return {
       loadList: [
-        "/static/markdown/main.md",
-        "/static/markdown/base.md",
+        // "/static/markdown/main.md",
+        // "/static/markdown/base.md",
         "/static/markdown/selector.md",
         // "/static/markdown/box.md"
       ],
+      load: "",
     };
+  },
+  created() {
+    console.log(this.markdown);
+    console.log(this.$route.params);
   },
   mounted() {
     Reveal.initialize({
