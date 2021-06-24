@@ -319,9 +319,3 @@
  + 类选择器/伪类选择器 - 10  <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
  + 标签选择器/伪元素选择器 - 1  <!-- .element: class="fragment fade-up" data-fragment-index="3" -->
  + 通配符/关系选择器 - 0  <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
-
----
-
-## 下一节
-
-[盒模型](/box)
